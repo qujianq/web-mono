@@ -1,0 +1,57 @@
+{
+  "name": "web-monorepo",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.12",
+    "pnpm": ">=9.5"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "math:dev": "pnpm -F math-project-vue dev",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:view": "npx @eslint/config-inspector"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "dayjs": "^1.11.13",
+    "mockjs": "^1.1.0",
+    "vue": "^3.5.9",
+    "vue-i18n": "^10.0.3"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.5.0",
+    "@eslint-react/eslint-plugin": "^1.10.1",
+    "@iconify-json/carbon": "^1.2.1",
+    "@iconify-json/vscode-icons": "^1.2.2",
+    "@types/mockjs": "^1.0.10",
+    "@types/vue": "^2.0.0",
+    "@unocss/eslint-plugin": "^0.62.3",
+    "eslint": "^9.10.0",
+    "eslint-plugin-format": "^0.1.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "lint-staged": "^15.2.10",
+    "simple-git-hooks": "^2.11.1",
+    "unocss": "catalog:",
+    "unocss-preset-theme": "^0.13.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": ">=9.0.0"
+      }
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}

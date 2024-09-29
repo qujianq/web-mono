@@ -1,0 +1,6 @@
+{
+  "enabled": true,
+  "languages": ["en", "zh"],
+  "localesPaths": ["src/locales"],
+  "defaultLocale": "zh"
+}
